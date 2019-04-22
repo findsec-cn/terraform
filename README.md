@@ -60,6 +60,12 @@ Terraform能够创建配置文件的模板，以可重复、可预测的方式�
 - 默认创建3个Master节点和3个Worker节点
 - 创建负载均衡器SLB、监听及其使用的EIP
 
+## 网络架构
+
+网络架构如下：
+
+![网络架构](https://github.com/findsec-cn/terraform/raw/master/imgs/vpc.jpg)
+
 ## 如何使用
 
 - 可以按自己的需求修改`terraform.tfvars`配置的变量，包括虚拟机启动的地域、登录虚拟需要的SSH Key、VPC的网段、ECS的数量等等。
