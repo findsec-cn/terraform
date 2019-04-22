@@ -39,8 +39,8 @@ Terraform能够创建配置文件的模板，以可重复、可预测的方式�
 4、为提高权限管理的灵活性和安全性，建议您创建RAM用户，并为其授权。
 
 - a. 登录 [RAM控制台](https://ram.console.aliyun.com/?spm=a2c63.p38356.879954.11.1aa1332eNuVkRH#/overview)。
-- b. 创建名为Terraform的RAM用户，并为该用户创建AccessKey。
-- c. 为RAM用户授权。需要为用户授予一下权限：
+- b. 创建名为Terraform的RAM用户，并为该用户创建AccessKey(访问方式选择编程访问)。
+- c. 为RAM用户授权。点击 `添加权限`，需要为用户授予一下权限：
 
 ![RAM用户授权](https://github.com/findsec-cn/terraform/raw/master/imgs/ali_ram_auth.jpg)
 
