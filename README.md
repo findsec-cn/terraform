@@ -68,7 +68,7 @@ Terraform能够创建配置文件的模板，以可重复、可预测的方式�
 
 ## 如何使用
 
-- 可以按自己的需求修改`terraform.tfvars`配置的变量，包括虚拟机启动的地域、登录虚拟需要的SSH Key、VPC的网段、ECS的数量等等。
+- 可以按自己的需求修改`terraform.tfvars`配置的变量，包括虚拟机启动的地域、登录虚拟需要的SSH Key、VPC的网段、ECS的数量、规格等等。
 - 需要先在阿里云上创建一个秘钥对，秘钥对的名字要和terraform.tfvars定义的SSH_KEY_NAME对应。
 - 运行terraform创建所需资源
 - 资源创建好以后通过堡垒机外网IP登录堡垒机，然后将上面创建秘钥对使用的私钥拷贝的堡垒机的 $HOME/.ssh/id_rsa，并配置权限 chmod 600 $HOME/.ssh/id_rsa

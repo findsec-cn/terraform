@@ -72,6 +72,8 @@ resource "alicloud_instance" "bastion-server" {
 
   vswitch_id = "${element(split(",", module.vpc.vswitch_ids),count.index)}"
 
+  private_ip = "${var.bastion_private_ip}"
+
   instance_name = "${var.cluster_name}-bastion-${count.index}"
   host_name     = "${var.cluster_name}-bastion-${count.index}"
 
@@ -95,6 +97,8 @@ resource "alicloud_instance" "k8s-master" {
 
   vswitch_id = "${element(split(",", module.vpc.vswitch_ids),count.index)}"
 
+  private_ip = "${var.k8s_master_num < 2 ? var.k8s_master_private_ips[0] : element(var.k8s_master_private_ips, count.index) }"
+
   instance_name = "${var.cluster_name}-master-${count.index}"
   host_name     = "${var.cluster_name}-master-${count.index}"
 
@@ -117,6 +121,8 @@ resource "alicloud_instance" "k8s-worker" {
   security_groups = ["${module.sg.security_group_id}"]
 
   vswitch_id = "${element(split(",", module.vpc.vswitch_ids),count.index)}"
+
+  private_ip = "${var.k8s_worker_num < 2 ? var.k8s_worker_private_ips[0] : element(var.k8s_worker_private_ips, count.index) }"
 
   instance_name = "${var.cluster_name}-worker-${count.index}"
   host_name     = "${var.cluster_name}-worker-${count.index}"

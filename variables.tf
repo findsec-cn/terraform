@@ -51,6 +51,11 @@ variable "bastion_internet_max_bandwidth_out" {
     description = "The maximum internet out bandwidth of instance Bastion Host"
 }
 
+variable "bastion_private_ip" {
+  description = "Configure Instance private IP address"
+  default     = ""
+}
+
 variable "k8s_master_num" {
   description = "Number of Kubernetes Master Nodes"
 }
@@ -59,12 +64,22 @@ variable "k8s_master_size" {
   description = "Instance size of Kubernetes Master Nodes"
 }
 
+variable "k8s_master_private_ips" {
+  description = "Configure Instance private IP address"
+  type        = "list"
+}
+
 variable "k8s_worker_num" {
   description = "Number of Kubernetes Worker Nodes"
 }
 
 variable "k8s_worker_size" {
   description = "Instance size of Kubernetes Worker Nodes"
+}
+
+variable "k8s_worker_private_ips" {
+  description = "Configure Instance private IP address"
+  type        = "list"
 }
 
 # SLB变量
